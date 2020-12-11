@@ -1,7 +1,16 @@
 package com.sem.level6task2.model
 
+import com.beust.klaxon.Json
+
 data class MovieItem(
-    var year: Int
+
+    val id: Int,
+    val title: String,
+    val release_date: String,
+    val vote_average: Double,
+    val overview: String,
+    val poster_path: String,
+
 ) {
-    fun getMovieUrl() = "https://api.themoviedb.org/3/discover/movie?api_key=fbfa2564113ded8c8f1b99d349f2a035&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_year=$year"
+    fun getImageUrl() = "https://image.tmdb.org/t/p/w500/$poster_path"
 }

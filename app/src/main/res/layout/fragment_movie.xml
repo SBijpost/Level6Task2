@@ -28,7 +28,7 @@
                 android:text="@string/the_most_popular_movies_of" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="50dp"
+                android:layout_width="75dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:hint="@string/year">
@@ -37,7 +37,8 @@
                     android:id="@+id/tilMovieYear"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
@@ -57,5 +58,17 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cvInput" />
+
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progress_bar"-->
+<!--        style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="5dp"-->
+<!--        android:scaleY="4"-->
+<!--        android:indeterminateTint="@color/purple_200"-->
+<!--        android:indeterminateBehavior="repeat"-->
+<!--        android:indeterminate="true"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/rvMovies"-->
+<!--        app:layout_constraintStart_toStartOf="parent"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.beust.klaxon.Klaxon
 import com.bumptech.glide.Glide
 import com.sem.level6task2.R
 import com.sem.level6task2.model.MovieItem
@@ -33,7 +34,8 @@ class MovieAdapter(private val movies: List<MovieItem>, private val onClick: (Mo
         }
 
         fun bind(movieItem: MovieItem) {
-            Glide.with(context).load(movieItem.getMovieUrl()).into(itemView.ivMovie)
+            Glide.with(context).load(movieItem.getImageUrl()).into(itemView.movie_photo)
+            itemView.movie_number.text = (adapterPosition + 1).toString()
         }
     }
 
