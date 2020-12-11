@@ -7,25 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.sem.level6task2.R
-import com.sem.level6task2.model.MovieItem
 import kotlinx.android.synthetic.main.fragment_view_movie.*
-import kotlinx.android.synthetic.main.item_movie.view.*
 
 class ViewMovieDetailFragment: Fragment() {
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance(movieTitle: String, moviePoster: String, movieDate: String, movieRate: Double, movieOverview: String) = ViewMovieDetailFragment().apply {
-            arguments = Bundle().apply {
-                putString("MOVIE_TITLE", movieTitle)
-                putString("MOVIE_POSTER", moviePoster)
-                putString("MOVIE_DATE", movieDate)
-                putDouble("MOVIE_RATE", movieRate)
-                putString("MOVIE_OVERVIEW", movieOverview)
-            }
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,6 +32,7 @@ class ViewMovieDetailFragment: Fragment() {
         tvDate.text = arguments?.getString("date")
         tvRating.text = arguments?.getDouble("rating").toString()
         tvOverview.text = arguments?.getString("overview")
+        ivStar.setImageResource(R.drawable.star)
     }
 
 

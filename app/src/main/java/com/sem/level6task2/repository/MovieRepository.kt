@@ -1,16 +1,10 @@
 package com.sem.level6task2.repository
 
-import android.content.Context
 import android.util.Log
-import android.widget.Toast
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.sem.level6task2.`interface`.EndPoints
 import com.sem.level6task2.model.MovieItem
 import com.sem.level6task2.model.MovieList
 import com.sem.level6task2.service.ServiceBuilder
-import com.sem.level6task2.ui.MovieFragment
-import com.sem.level6task2.ui.MovieViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

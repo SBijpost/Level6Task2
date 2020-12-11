@@ -1,7 +1,5 @@
 package com.sem.level6task2.model
 
-import com.beust.klaxon.Json
-
 data class MovieItem(
 
     val id: Int,

@@ -73,12 +73,6 @@ class MovieFragment : Fragment() {
 
     private fun loadMovies() {
         viewModel.yearParam = tilMovieYear.text.toString()
-        movies.clear()
-        movieAdapter.notifyDataSetChanged()
-        Log.d("ADDDAD", movies.size.toString())
-        //viewModel.getMovieList(tilMovieYear.text.toString())
-
-//        viewModel.movieItems.removeObservers(viewLifecycleOwner)
 
         viewModel.movieItems.observe(viewLifecycleOwner, Observer {
             movies.clear()
@@ -88,9 +82,7 @@ class MovieFragment : Fragment() {
     }
 
     private fun onMovieClick(movieItem: MovieItem) {
-        //val fragment = ViewMovieDetailFragment.newInstance(movieItem.title, movieItem.poster_path, movieItem.release_date, movieItem.vote_average, movieItem.overview)
         val bundle = bundleOf("title" to movieItem.title, "overview" to movieItem.overview, "backdrop" to movieItem.getBackdropImage(), "date" to movieItem.release_date, "rating" to movieItem.vote_average, "poster" to movieItem.getImageUrl())
         navController.navigate(R.id.action_movieFragment_to_viewMovieDetailFragment, bundle)
-        Snackbar.make(rvMovies, "This movie is: ${movieItem.title}", Snackbar.LENGTH_LONG).show()
     }
 }
