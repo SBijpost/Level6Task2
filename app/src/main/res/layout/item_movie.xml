@@ -19,7 +19,7 @@
                 android:layout_height="200dp"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/movie_photo"
-                android:contentDescription="Movie Image" />
+                android:contentDescription="@string/movie_poster" />
 
             <TextView
                 android:layout_below="@+id/movie_photo"

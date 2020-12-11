@@ -7,9 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,6 +33,8 @@ class MovieFragment : Fragment() {
     private lateinit var viewModel: MovieViewModel
     private lateinit var viewModelFactory: ViewModelFactory
 
+    private lateinit var navController: NavController
+
     private var year: String = ""
 
     override fun onCreateView(
@@ -37,6 +42,7 @@ class MovieFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+        navController = findNavController()
         viewModelFactory = ViewModelFactory(year)
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(MovieViewModel::class.java)
@@ -82,6 +88,9 @@ class MovieFragment : Fragment() {
     }
 
     private fun onMovieClick(movieItem: MovieItem) {
+        //val fragment = ViewMovieDetailFragment.newInstance(movieItem.title, movieItem.poster_path, movieItem.release_date, movieItem.vote_average, movieItem.overview)
+        val bundle = bundleOf("title" to movieItem.title, "overview" to movieItem.overview, "backdrop" to movieItem.getBackdropImage(), "date" to movieItem.release_date, "rating" to movieItem.vote_average, "poster" to movieItem.getImageUrl())
+        navController.navigate(R.id.action_movieFragment_to_viewMovieDetailFragment, bundle)
         Snackbar.make(rvMovies, "This movie is: ${movieItem.title}", Snackbar.LENGTH_LONG).show()
     }
 }

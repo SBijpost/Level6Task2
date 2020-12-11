@@ -12,4 +12,7 @@
     <string name="the_most_popular_movies_of">The most popular movies of</string>
     <string name="year">Year</string>
     <string name="submit">SUBMIT</string>
+    <string name="movie_poster">Movie Poster</string>
+    <string name="star">Star</string>
+    <string name="overview">Overview</string>
 </resources>

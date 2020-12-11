@@ -8,5 +8,14 @@
         android:id="@+id/movieFragment"
         android:name="com.sem.level6task2.ui.MovieFragment"
         android:label="fragment_movie"
-        tools:layout="@layout/fragment_movie" />
+        tools:layout="@layout/fragment_movie" >
+        <action
+            android:id="@+id/action_movieFragment_to_viewMovieDetailFragment"
+            app:destination="@id/viewMovieDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewMovieDetailFragment"
+        android:name="com.sem.level6task2.ui.ViewMovieDetailFragment"
+        android:label="ViewMovieDetailFragment" >
+    </fragment>
 </navigation>

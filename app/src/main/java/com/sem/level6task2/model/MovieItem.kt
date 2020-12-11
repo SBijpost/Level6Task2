@@ -10,7 +10,9 @@ data class MovieItem(
     val vote_average: Double,
     val overview: String,
     val poster_path: String,
+    val backdrop_path: String,
 
 ) {
     fun getImageUrl() = "https://image.tmdb.org/t/p/w500/$poster_path"
+    fun getBackdropImage() = "https://image.tmdb.org/t/p/original/$backdrop_path"
 }
